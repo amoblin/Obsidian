@@ -1,0 +1,3 @@
+spider=$1
+
+rm $spider.json; scrapy crawl $spider -o $spider.json;jq . $spider.json

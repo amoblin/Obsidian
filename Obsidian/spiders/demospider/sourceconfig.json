@@ -1,0 +1,13 @@
+{
+    "name": "myspider",
+    "prefix": "https://www.specialized.com/",
+    "allowed_domains": ["specialized.com"],
+    "start_urls": ["https://www.specialized.com/cn/zh/115443"],
+    "link_array_pipline": [],
+    "main_content_pipline": [{"type": "css", "value": ".js-body"}],
+    "item_pipline": {
+        "image": [{
+            "type": "css", "value": ".carousel-hero__slide-image.js-lazy-slide-image::attr(data-src)"
+        }]
+    }
+}
