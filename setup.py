@@ -1,21 +1,24 @@
+#!/usr/bin/env python
+
 from setuptools import setup, find_packages
 
 setup(
     name = "Obsidian",
     version = "1.0",
     packages = find_packages(),
-    scripts = ['obsidian'],
+    scripts = ['obsidian.py'],
 
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
     install_requires = [
-        'docutils>=0.3',
-        'scrapy'
+    ],
+    requires = [
+        'scrapy',
     ],
 
     package_data = {
         # If any package contains *.txt or *.rst files, include them:
-        '': ['*.txt', '*.rst'],
+        '': ['*.txt', '*.rst', '*.md'],
     },
 
     # metadata for upload to PyPI
