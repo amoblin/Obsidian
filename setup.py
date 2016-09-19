@@ -3,8 +3,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = "Obsidian",
-    version = "1.0",
+    name = 'Obsidian',
+    version = '1.0.1',
     packages = find_packages(),
     scripts = ['obsidian.py'],
 
