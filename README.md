@@ -16,6 +16,7 @@ base on scrapy and just write json config like this:
     "prefix": "https://www.specialized.com/",
     "allowed_domains": ["specialized.com"],
     "start_urls": ["https://www.specialized.com/cn/zh/115443"],
+    "entry": "",
     "link_array_pipline": [],
     "main_content_pipline": [{"type": "css", "value": ".js-body"}],
     "item_pipline": {
@@ -27,3 +28,5 @@ base on scrapy and just write json config like this:
 ```
 
 不需要开发，只需要会在浏览器中“审查元素”，然后书写json配置文件，就可以抓取网页上的特定数据。
+
+目前直接可以使用的业务参见：https://github.com/amoblin/xiaozhua
