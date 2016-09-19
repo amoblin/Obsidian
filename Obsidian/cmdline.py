@@ -18,6 +18,7 @@ def execute():
         print("usage: %s [config file]" % sys.argv[0])
         sys.exit(0)
     filename = sys.argv[1]
+
     output = os.path.join(os.getcwd(), "obsidian_output.json")
     if len(sys.argv) > 2:
         output = sys.argv[2]
@@ -27,6 +28,11 @@ def execute():
 
     if not filename.startswith('/'):
         filename = os.path.join(os.getcwd(), filename)
+
+    if not os.path.isfile(filename):
+        print("file not exist: %s" % sys.argv[1])
+        sys.exit(0)
+
     dest = os.path.join(base, "spiders/config.json")
     if os.path.islink(dest):
         os.remove(dest)
