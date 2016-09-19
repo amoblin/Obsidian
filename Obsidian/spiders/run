@@ -1,0 +1,17 @@
+business=$1
+
+time=`date +%m%d_%H%M%S`
+
+ln -sf XiaoZhua/$business.json config.json
+
+data_path=data/$business
+
+if [ ! -e $data_path ]; then
+   mkdir -p $data_path
+fi
+
+output=$data_path/$business.json
+if [ -e $output ]; then
+   rm $output
+fi
+scrapy crawl jsonspider -o $output

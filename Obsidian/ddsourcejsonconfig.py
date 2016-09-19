@@ -21,3 +21,4 @@ class DDSourceJsonConfig(DDSourceConfig):
             self.link_array_pipline = config["link_array_pipline"]
             self.main_content_pipline = config["main_content_pipline"]
             self.item_pipline = config["item_pipline"]
+            self.entry = config["entry"]
