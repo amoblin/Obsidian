@@ -7,9 +7,12 @@
 import time
 import scrapy
 from Obsidian.items import ObsidianItem
+import logging
 
 from scrapy import Spider
 from scrapy.http import Request
+
+logging.basicConfig(level=logging.NOTSET)
 
 class DDSpider(Spider):
 

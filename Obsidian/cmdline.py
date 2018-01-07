@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # file name: cmdline.py
 # description: TODO
@@ -33,13 +33,9 @@ def execute():
         print("file not exist: %s" % sys.argv[1])
         sys.exit(0)
 
-    dest = os.path.join(base, "spiders/config.json")
-    if os.path.islink(dest):
-        os.remove(dest)
-    os.symlink(filename, dest)
     os.chdir(os.path.join(base, "spiders"))
     init_settings()
-    scrapy.cmdline.execute(("scrapy crawl jsonspider -o %s" % output).split())
+    scrapy.cmdline.execute(("scrapy crawl jsonspider -a path=%s -o %s" % (filename, output)).split())
 
 def init_settings():
     content = """
